@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Алексей Тарануха — Продающие сайты для экспертов, наставников и онлайн-школ</title>
+<meta name="description" content="Делаю продающие лендинги и AI-автоматизацию для экспертов и онлайн-школ. Реклама идёт, а заявок нет? Покажу, где сайт теряет деньги. Средний рост заявок — ×3 при том же трафике.">
+<link rel="canonical" href="https://taranukha.ru/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Реклама идёт — заявок нет? Покажу где теряете деньги">
+<meta property="og:description" content="Продающие сайты и AI-автоматизация для экспертов. Рост заявок ×3. Бесплатный аудит — 30 минут.">
+<meta property="og:image" content="https://taranukha.ru/og-main.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://taranukha.ru/">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Алексей Тарануха","jobTitle":"Специалист по продающим сайтам и AI-автоматизации","url":"https://taranukha.ru","sameAs":["https://t.me/taranukha"]}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:        #060606;
+  --bg2:       #0a0a0a;
+  --bg3:       #0f0f0f;
+  --surface:   #141414;
+  --surface2:  #1a1a1a;
+  --border:    rgba(255,255,255,0.06);
+  --border2:   rgba(255,255,255,0.11);
+  --border3:   rgba(255,255,255,0.2);
+  --white:     #ffffff;
+  --gray1:     #e0e0e0;
+  --gray2:     #888;
+  --gray3:     #484848;
+  --gray4:     #242424;
+  --gold:      #c8a96e;
+  --gold2:     #e8c88a;
+  --gold-dim:  rgba(200,169,110,0.12);
+  --gold-glow: rgba(200,169,110,0.25);
+  --ff-d:      'Syne', sans-serif;
+  --ff-b:      'Instrument Sans', sans-serif;
+  --r:         10px;
+  --r-lg:      16px;
+  --r-xl:      22px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
+html { scroll-behavior: smooth }
+body {
+  background: var(--bg);
+  color: var(--gray1);
+  font-family: var(--ff-b);
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NOISE TEXTURE ── */
+body::after {
+  content: '';
+  position: fixed; inset: 0; z-index: 9998;
+  pointer-events: none; opacity: .018;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+}
+
+/* ── PARTICLES ── */
+#particles { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden }
+.particle {
+  position: absolute; border-radius: 50%;
+  background: var(--gold);
+  animation: particleFloat linear infinite;
+  opacity: 0;
+}
+@keyframes particleFloat {
+  0%   { transform: translateY(100vh) scale(0); opacity: 0 }
+  10%  { opacity: 1 }
+  90%  { opacity: .5 }
+  100% { transform: translateY(-20px) scale(1); opacity: 0 }
+}
+
+/* ── CURSOR ── */
+.cur-dot {
+  width: 6px; height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  position: fixed; pointer-events: none; z-index: 9999;
+  transform: translate(-50%,-50%);
+  transition: transform .08s, background .2s;
+  box-shadow: 0 0 10px var(--gold-glow);
+}
+.cur-ring {
+  width: 32px; height: 32px;
+  border: 1px solid rgba(200,169,110,.4);
+  border-radius: 50%;
+  position: fixed; pointer-events: none; z-index: 9998;
+  transform: translate(-50%,-50%);
+  transition: width .25s, height .25s, border-color .25s, background .25s;
+}
+.cur-ring.big {
+  width: 56px; height: 56px;
+  background: rgba(200,169,110,.06);
+  border-color: rgba(200,169,110,.6);
+}
+
+/* ── UTILS ── */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 36px; position: relative; z-index: 1 }
+
+.label {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 10px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 20px;
+}
+.label::before { content: ''; width: 16px; height: 1px; background: var(--gold) }
+
+h1,h2,h3,h4 { font-family: var(--ff-d); line-height: 1.06; letter-spacing: -.025em }
+p { line-height: 1.78 }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--ff-b); font-size: 14px; font-weight: 600;
+  padding: 14px 28px; border-radius: var(--r);
+  cursor: pointer; text-decoration: none; border: none;
+  transition: all .25s ease; white-space: nowrap;
+  position: relative; overflow: hidden;
+}
+.btn::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,.12) 0%, transparent 60%);
+  opacity: 0; transition: opacity .25s;
+}
+.btn:hover::after { opacity: 1 }
+
+.btn-gold {
+  background: linear-gradient(135deg, #c8a96e, #a07840);
+  color: #060606; font-weight: 700;
+  box-shadow: 0 0 0 0 rgba(200,169,110,0);
+}
+.btn-gold:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px rgba(200,169,110,.4), 0 0 0 1px rgba(200,169,110,.3);
+}
+.btn-outline {
+  background: transparent; color: var(--gray2);
+  border: 1px solid var(--border2);
+}
+.btn-outline:hover {
+  border-color: rgba(200,169,110,.5);
+  color: var(--gold);
+  background: var(--gold-dim);
+  transform: translateY(-2px);
+}
+
+/* ── PROGRESS BAR ── */
+.progress-bar {
+  position: fixed; top: 0; left: 0; height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold2));
+  z-index: 200; width: 0%; transition: width .05s linear;
+  box-shadow: 0 0 8px var(--gold-glow);
+}
+
+/* ── NOTICE ── */
+.notice {
+  background: rgba(200,169,110,.07);
+  border-bottom: 1px solid rgba(200,169,110,.15);
+  padding: 10px 0; text-align: center;
+  font-size: 12.5px; color: var(--gray2); position: relative; z-index: 101;
+}
+.notice strong { color: var(--gold); font-weight: 600 }
+.ndot {
+  display: inline-block; width: 5px; height: 5px; background: var(--gold);
+  border-radius: 50%; margin-right: 8px; vertical-align: middle;
+  animation: pulse 2s ease infinite; box-shadow: 0 0 6px var(--gold);
+}
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(.5)} }
+
+/* ── NAV ── */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: background .3s }
+nav.sc {
+  background: rgba(6,6,6,.94);
+  backdrop-filter: blur(28px) saturate(180%);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 62px }
+.logo { display: flex; align-items: center; gap: 12px; text-decoration: none }
+.logo-mark {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: linear-gradient(135deg, #c8a96e, #7a4e1a);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--ff-d); font-size: 12px; font-weight: 800; color: #060606;
+  transition: transform .25s, box-shadow .25s;
+}
+.logo:hover .logo-mark {
+  transform: rotate(-8deg) scale(1.1);
+  box-shadow: 0 8px 28px rgba(200,169,110,.35);
+}
+.logo-text { font-family: var(--ff-d); font-size: 14px; font-weight: 700; color: #fff }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none }
+.nav-links a { font-size: 13px; color: var(--gray3); text-decoration: none; transition: color .15s; position: relative }
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px;
+  background: var(--gold); transition: width .25s;
+}
+.nav-links a:hover { color: #fff }
+.nav-links a:hover::after { width: 100% }
+.nav-cta { font-size: 13px; padding: 9px 20px }
+
+/* ════════════════════════════════════
+   HERO
+════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  display: grid; grid-template-columns: 1fr 420px;
+  align-items: center; padding: 140px 0 100px;
+  position: relative; overflow: hidden; gap: 60px;
+}
+
+/* Animated grid */
+.hero-grid {
+  position: absolute; inset: 0; z-index: 0;
+  background-image:
+    linear-gradient(rgba(200,169,110,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,169,110,.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+  animation: gridPan 40s linear infinite;
+  mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 0%, transparent 100%);
+}
+@keyframes gridPan {
+  0%   { background-position: 0 0 }
+  100% { background-position: 80px 80px }
+}
+
+/* Gold blobs */
+.hero-blob {
+  position: absolute; border-radius: 50%;
+  filter: blur(80px); pointer-events: none; z-index: 0;
+}
+.hero-blob-1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(200,169,110,.07) 0%, transparent 70%);
+  right: 5%; top: 10%;
+  animation: blobFloat 15s ease-in-out infinite;
+}
+.hero-blob-2 {
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(200,169,110,.04) 0%, transparent 70%);
+  left: 10%; bottom: 15%;
+  animation: blobFloat 20s ease-in-out infinite reverse;
+}
+@keyframes blobFloat {
+  0%,100% { transform: translate(0,0) scale(1) }
+  33%     { transform: translate(30px,-20px) scale(1.05) }
+  66%     { transform: translate(-15px,25px) scale(.97) }
+}
+
+.hero-left { position: relative; z-index: 1 }
+.hero-right { position: relative; z-index: 1 }
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-size: 10.5px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--gold); padding: 7px 16px; border-radius: 100px;
+  border: 1px solid rgba(200,169,110,.25); background: rgba(200,169,110,.06);
+  margin-bottom: 30px;
+}
+.hero-badge span {
+  width: 4px; height: 4px; border-radius: 50%; background: var(--gold);
+  animation: pulse 1.8s ease infinite; box-shadow: 0 0 8px var(--gold);
+}
+
+.hero h1 {
+  font-size: clamp(38px, 4.2vw, 64px);
+  font-weight: 800; color: #fff; margin-bottom: 26px;
+}
+.hero h1 .gold-text {
+  background: linear-gradient(90deg, var(--gold), var(--gold2), var(--gold));
+  background-size: 200% auto;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+@keyframes shimmer { 0%{background-position:0%} 100%{background-position:200%} }
+
+/* Typewriter cursor */
+.tw-cursor {
+  display: inline-block; width: 3px; height: 0.9em;
+  background: var(--gold); margin-left: 3px; vertical-align: middle;
+  animation: blink 0.9s ease infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+.hero-sub {
+  font-size: 16.5px; color: var(--gray2);
+  max-width: 500px; margin-bottom: 36px; font-weight: 300; line-height: 1.82;
+}
+.hero-sub strong { color: var(--gray1); font-weight: 500 }
+
+.hero-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 52px }
+
+/* Stats */
+.hero-stats {
+  display: flex; border: 1px solid var(--border2);
+  border-radius: var(--r-lg); overflow: hidden;
+  width: fit-content; background: var(--surface);
+}
+.hstat {
+  padding: 16px 22px; border-right: 1px solid var(--border);
+  position: relative; transition: background .25s;
+  cursor: default;
+}
+.hstat::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0; transition: opacity .3s;
+}
+.hstat:hover { background: var(--surface2) }
+.hstat:hover::before { opacity: 1 }
+.hstat:last-child { border-right: none }
+.hstat-num {
+  font-family: var(--ff-d); font-size: 24px;
+  font-weight: 800; color: var(--gold); line-height: 1; letter-spacing: -.03em;
+}
+.hstat-num span { color: var(--gray3); font-size: 14px }
+.hstat-label { font-size: 10.5px; color: var(--gray3); margin-top: 4px }
+
+/* Hero right: funnel card */
+.hero-card {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--r-xl); padding: 24px;
+  position: relative; overflow: hidden;
+}
+.hero-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200,169,110,.5), transparent);
+}
+.hero-card-title {
+  font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--gray3); margin-bottom: 16px;
+}
+.funnel-steps { display: flex; flex-direction: column; gap: 4px }
+.funnel-step {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 14px; border-radius: 9px;
+  background: var(--bg3); border: 1px solid var(--border);
+  transition: border-color .3s, background .3s, transform .3s, box-shadow .3s;
+  cursor: default; position: relative;
+}
+.funnel-step:hover {
+  border-color: rgba(200,169,110,.4);
+  background: var(--surface2);
+  transform: translateX(4px);
+  box-shadow: 0 4px 20px rgba(200,169,110,.08), inset 0 0 0 1px rgba(200,169,110,.1);
+}
+.funnel-connector {
+  position: absolute; left: 24px; bottom: -4px;
+  width: 1px; height: 4px; background: var(--border); z-index: 1;
+}
+.funnel-step:last-child .funnel-connector { display: none }
+.funnel-icon {
+  width: 28px; height: 28px; border-radius: 7px;
+  background: var(--gold-dim); border: 1px solid rgba(200,169,110,.2);
+  display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0;
+}
+.funnel-info { flex: 1; min-width: 0 }
+.funnel-name { font-size: 12px; font-weight: 600; color: #fff; font-family: var(--ff-d) }
+.funnel-desc { font-size: 10.5px; color: var(--gray3); margin-top: 1px }
+.funnel-badge {
+  font-size: 9.5px; font-weight: 700; color: var(--gold);
+  background: var(--gold-dim); padding: 3px 8px; border-radius: 100px;
+  border: 1px solid rgba(200,169,110,.2); white-space: nowrap; flex-shrink: 0;
+}
+.hero-card-bottom {
+  margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border);
+  display: flex; gap: 20px;
+}
+.hcb-item {}
+.hcb-num { font-family: var(--ff-d); font-size: 20px; font-weight: 800; color: var(--gold) }
+.hcb-label { font-size: 10px; color: var(--gray3); margin-top: 2px }
+
+/* HERO ENTRANCE */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px) }
+  to   { opacity: 1; transform: translateY(0) }
+}
+.hero-left > * { opacity: 0; animation: fadeUp .8s cubic-bezier(.16,.85,.36,1) forwards }
+.hero-badge   { animation-delay: .05s }
+.hero h1      { animation-delay: .18s }
+.hero-sub     { animation-delay: .30s }
+.hero-actions { animation-delay: .42s }
+.hero-stats   { animation-delay: .55s }
+.hero-right   { opacity: 0; animation: fadeUp .8s cubic-bezier(.16,.85,.36,1) .4s forwards }
+
+/* ── MARQUEE ── */
+.marquee-wrap {
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  background: var(--bg2); overflow: hidden; padding: 15px 0; position: relative; z-index: 1;
+}
+.mtrack {
+  display: flex; gap: 52px; align-items: center;
+  animation: marquee 36s linear infinite; width: max-content;
+}
+.mtrack:hover { animation-play-state: paused }
+.mitem {
+  font-family: var(--ff-d); font-size: 10px; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--gray3); white-space: nowrap;
+  display: flex; align-items: center; gap: 10px; transition: color .2s;
+}
+.mitem::before { content: '✦'; font-size: 6px; color: rgba(200,169,110,.35) }
+.mitem:hover { color: var(--gold) }
+@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ════════════════════════════════════
+   PAIN
+════════════════════════════════════ */
+.pain { padding: 110px 0; background: var(--bg2); position: relative }
+.pain-header { max-width: 540px; margin-bottom: 50px }
+.pain-header h2 { font-size: clamp(30px,3.8vw,50px); font-weight: 800; color: #fff; margin-bottom: 16px }
+.pain-header h2 em { font-style: normal; color: var(--gold) }
+.pain-header p { font-size: 17px; color: var(--gray2); font-weight: 300 }
+.pain-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 1px; border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden;
+}
+.pcard {
+  background: var(--surface); padding: 30px 26px;
+  transition: background .3s; position: relative; overflow: hidden; cursor: default;
+}
+.pcard::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0; transition: opacity .35s;
+}
+.pcard::after {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(200,169,110,.04) 0%, transparent 60%);
+  opacity: 0; transition: opacity .35s;
+}
+.pcard:hover { background: var(--surface2) }
+.pcard:hover::before { opacity: 1 }
+.pcard:hover::after { opacity: 1 }
+.pcard-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: var(--gold-dim); border: 1px solid rgba(200,169,110,.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; margin-bottom: 18px;
+  transition: transform .3s, box-shadow .3s;
+}
+.pcard:hover .pcard-icon { transform: scale(1.1) rotate(-5deg); box-shadow: 0 8px 24px var(--gold-glow) }
+.pcard h4 { font-size: 14.5px; font-weight: 700; color: #fff; margin-bottom: 9px; font-family: var(--ff-b) }
+.pcard p { font-size: 13px; color: var(--gray3); line-height: 1.68 }
+.pcard-stat {
+  margin-top: 20px; font-family: var(--ff-d);
+  font-size: 30px; font-weight: 800; color: var(--gold); letter-spacing: -.03em;
+}
+.pcard-stat span { font-size: 11px; font-weight: 400; color: var(--gray3); font-family: var(--ff-b); display: block; margin-top: 3px }
+
+/* ════════════════════════════════════
+   WHO
+════════════════════════════════════ */
+.who { padding: 110px 0 }
+.who-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center }
+.who-left h2 { font-size: clamp(30px,3.8vw,50px); font-weight: 800; color: #fff; margin-bottom: 22px }
+.who-left h2 em { font-style: normal; color: var(--gold) }
+.who-left p { font-size: 16px; color: var(--gray2); font-weight: 300; line-height: 1.82; margin-bottom: 18px }
+.trigger-note {
+  font-size: 13.5px; color: var(--gray3);
+  border-left: 2px solid rgba(200,169,110,.3);
+  padding-left: 18px; font-style: italic; line-height: 1.72;
+}
+.who-cards { display: flex; flex-direction: column; gap: 8px }
+.wcard {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 18px 20px;
+  display: flex; align-items: flex-start; gap: 14px;
+  transition: border-color .3s, background .3s, transform .3s, box-shadow .3s;
+  cursor: default;
+}
+.wcard:hover {
+  border-color: rgba(200,169,110,.35);
+  background: var(--surface2);
+  transform: translateX(6px);
+  box-shadow: -4px 0 20px rgba(200,169,110,.06), 0 4px 16px rgba(0,0,0,.3);
+}
+.wcard-icon {
+  font-size: 17px; width: 38px; height: 38px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--gold-dim); border-radius: 9px; border: 1px solid rgba(200,169,110,.15);
+  transition: transform .3s, box-shadow .3s;
+}
+.wcard:hover .wcard-icon { transform: scale(1.08); box-shadow: 0 4px 16px var(--gold-glow) }
+.wcard h4 { font-size: 13.5px; font-weight: 600; color: #fff; margin-bottom: 4px }
+.wcard p { font-size: 12.5px; color: var(--gray3); line-height: 1.6 }
+.wcard-budget { font-size: 11px; color: var(--gold); font-weight: 500; margin-top: 5px }
+
+/* ════════════════════════════════════
+   SOLUTION
+════════════════════════════════════ */
+.solution { padding: 110px 0; background: var(--bg2) }
+.solution-header { text-align: center; max-width: 540px; margin: 0 auto 60px }
+.solution-header h2 { font-size: clamp(30px,3.8vw,50px); font-weight: 800; color: #fff; margin-bottom: 16px }
+.solution-header p { font-size: 17px; color: var(--gray2); font-weight: 300; line-height: 1.75 }
+.sol-items { display: flex; flex-direction: column; gap: 2px; border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden }
+.sol-item { background: var(--surface); transition: background .25s }
+.sol-item:hover { background: var(--surface2) }
+.sol-head {
+  padding: 26px 34px; display: flex; align-items: center; gap: 20px; cursor: pointer;
+  transition: background .2s;
+}
+.sol-head:hover { background: rgba(200,169,110,.03) }
+.sol-num { font-family: var(--ff-d); font-size: 10px; font-weight: 700; color: var(--gold); opacity: .5; min-width: 22px }
+.sol-title-wrap { flex: 1 }
+.sol-head h3 { font-size: 18px; font-weight: 700; color: #fff }
+.sol-sub2 { font-size: 12.5px; color: var(--gray3); margin-top: 3px }
+.sol-price {
+  font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
+  padding: 6px 14px; border-radius: 100px; white-space: nowrap;
+  background: var(--gold-dim); color: var(--gold); border: 1px solid rgba(200,169,110,.25);
+  transition: background .25s, box-shadow .25s;
+}
+.sol-item:hover .sol-price { background: rgba(200,169,110,.18); box-shadow: 0 0 16px rgba(200,169,110,.15) }
+.sol-body { padding: 0 34px 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px }
+.sol-body p { font-size: 14px; color: var(--gray2); line-height: 1.8; font-weight: 300 }
+.sol-list { list-style: none; display: flex; flex-direction: column; gap: 9px }
+.sol-list li { font-size: 13px; color: var(--gray2); display: flex; gap: 10px; align-items: flex-start }
+.sol-list li::before { content: '→'; color: var(--gold); font-size: 11px; margin-top: 3px; flex-shrink: 0 }
+.sol-roi { margin-top: 20px; padding: 14px 16px; background: var(--gold-dim); border: 1px solid rgba(200,169,110,.18); border-radius: var(--r) }
+.sol-roi-label { font-size: 9.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 5px }
+.sol-roi p { font-size: 12.5px; color: var(--gray2); line-height: 1.68; font-weight: 300 }
+
+/* ════════════════════════════════════
+   STACK
+════════════════════════════════════ */
+.stack { padding: 72px 0; background: var(--bg3); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border) }
+.stack-header { text-align: center; margin-bottom: 36px }
+.stack-header h2 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 8px }
+.stack-header p { font-size: 14px; color: var(--gray3); font-weight: 300 }
+.stack-grid { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center }
+.stack-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 9px 18px; border-radius: var(--r);
+  background: var(--surface); border: 1px solid var(--border);
+  font-size: 13px; font-weight: 500; color: var(--gray2);
+  transition: border-color .3s, color .3s, background .3s, transform .3s, box-shadow .3s;
+  cursor: default;
+}
+.stack-item:hover {
+  border-color: rgba(200,169,110,.4);
+  color: var(--gold); background: var(--surface2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(200,169,110,.1);
+}
+.stack-dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(200,169,110,.4); flex-shrink: 0; transition: background .3s }
+.stack-item:hover .stack-dot { background: var(--gold) }
+
+/* ════════════════════════════════════
+   HOW
+════════════════════════════════════ */
+.how { padding: 110px 0 }
+.how-header { max-width: 500px; margin-bottom: 60px }
+.how-header h2 { font-size: clamp(30px,3.8vw,50px); font-weight: 800; color: #fff; margin-bottom: 14px }
+.how-header p { font-size: 17px; color: var(--gray2); font-weight: 300 }
+.how-steps {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 1px; border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden;
+}
+.hstep {
+  background: var(--surface); padding: 28px 24px;
+  position: relative; transition: background .3s;
+  cursor: default; overflow: hidden;
+}
+.hstep::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0; transition: opacity .35s;
+}
+.hstep:hover { background: var(--surface2) }
+.hstep:hover::after { opacity: 1 }
+.hstep-num {
+  font-family: var(--ff-d); font-size: 46px; font-weight: 800;
+  color: rgba(200,169,110,.06); line-height: 1; margin-bottom: 18px;
+  transition: color .35s;
+}
+.hstep:hover .hstep-num { color: rgba(200,169,110,.12) }
+.hstep h4 { font-size: 14.5px; font-weight: 700; color: #fff; margin-bottom: 8px; font-family: var(--ff-d); letter-spacing: -.01em }
+.hstep p { font-size: 13px; color: var(--gray3); line-height: 1.65 }
+.hstep-time { font-size: 9.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-top: 16px; opacity: .7 }
+
+/* ════════════════════════════════════
+   CASES
+════════════════════════════════════ */
+.cases { padding: 110px 0; background: var(--bg2) }
+.cases-top {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-bottom: 44px; gap: 20px; flex-wrap: wrap;
+}
+.cases-top h2 { font-size: clamp(30px,3.8vw,50px); font-weight: 800; color: #fff; max-width: 360px }
+.cases-note { font-size: 13px; color: var(--gray3); max-width: 250px; text-align: right; line-height: 1.65 }
+.cases-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px }
+.ccase {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 30px;
+  position: relative; overflow: hidden;
+  transition: border-color .35s, transform .35s, box-shadow .35s;
+  cursor: default;
+}
+.ccase::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(200,169,110,.04) 0%, transparent 55%);
+  opacity: 0; transition: opacity .35s;
+}
+.ccase:hover {
+  border-color: rgba(200,169,110,.3);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.5), 0 0 0 1px rgba(200,169,110,.15);
+}
+.ccase:hover::before { opacity: 1 }
+.ccase--big { grid-column: 1/-1 }
+.ccase-tag { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 8px }
+.ccase-client { font-size: 12px; color: var(--gray3); margin-bottom: 10px }
+.ccase h3 { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 14px; line-height: 1.25 }
+.ccase p { font-size: 13.5px; color: var(--gray3); line-height: 1.75; margin-bottom: 24px }
+.metrics { display: flex; gap: 28px; flex-wrap: wrap }
+.metric-num {
+  font-family: var(--ff-d); font-size: 28px;
+  font-weight: 800; color: var(--gold); letter-spacing: -.03em; line-height: 1;
+  transition: color .25s;
+}
+.ccase:hover .metric-num { color: var(--gold2) }
+.metric-label { font-size: 11px; color: var(--gray3); margin-top: 5px }
+.ccase--big .metric-num { font-size: 38px }
+
+/* ════════════════════════════════════
+   OBJECTIONS
+════════════════════════════════════ */
+.obj { padding: 110px 0 }
+.obj-header { max-width: 520px; margin-bottom: 48px }
+.obj-header h2 { font-size: clamp(28px,3.6vw,46px); font-weight: 800; color: #fff; margin-bottom: 14px }
+.obj-header p { font-size: 17px; color: var(--gray2); font-weight: 300 }
+.obj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+.ocard {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 26px;
+  transition: border-color .3s, background .3s, transform .3s, box-shadow .3s;
+  cursor: default;
+}
+.ocard:hover {
+  border-color: rgba(200,169,110,.35);
+  background: var(--surface2);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,.4), 0 0 0 1px rgba(200,169,110,.1);
+}
+.ocard-q {
+  font-size: 14.5px; font-weight: 700; color: var(--gray2);
+  margin-bottom: 12px; font-family: var(--ff-d); letter-spacing: -.01em;
+  transition: color .25s;
+}
+.ocard:hover .ocard-q { color: #fff }
+.ocard-q::before { content: '"'; color: var(--gold); margin-right: 1px }
+.ocard-q::after  { content: '"'; color: var(--gold); margin-left: 1px }
+.ocard p { font-size: 13.5px; color: var(--gray2); line-height: 1.78; font-weight: 300 }
+.ocard p strong { color: #fff; font-weight: 500 }
+
+/* ════════════════════════════════════
+   CTA FORM
+════════════════════════════════════ */
+.cta-sec { padding: 110px 0; background: var(--bg2); border-top: 1px solid var(--border) }
+.cta-wrap { max-width: 620px; margin: 0 auto; text-align: center }
+.cta-wrap h2 { font-size: clamp(28px,3.6vw,46px); font-weight: 800; color: #fff; margin-bottom: 16px }
+.cta-wrap h2 em { font-style: normal; color: var(--gold) }
+.cta-wrap > p { font-size: 17px; color: var(--gray2); margin-bottom: 40px; font-weight: 300 }
+.form-box {
+  background: var(--surface); border: 1px solid var(--border2);
+  border-radius: var(--r-xl); padding: 34px; text-align: left;
+  position: relative; overflow: hidden;
+}
+.form-box::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200,169,110,.5), transparent);
+}
+.frow { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px }
+.ff { display: flex; flex-direction: column; gap: 6px }
+.ff label { font-size: 10.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gray3) }
+.ff input, .ff select, .ff textarea {
+  background: var(--bg); border: 1px solid var(--border2);
+  border-radius: 8px; padding: 12px 14px;
+  color: #fff; font-family: var(--ff-b); font-size: 14px;
+  outline: none; transition: border-color .25s, box-shadow .25s;
+  -webkit-appearance: none;
+}
+.ff input::placeholder, .ff textarea::placeholder { color: var(--gray4) }
+.ff input:focus, .ff select:focus, .ff textarea:focus {
+  border-color: rgba(200,169,110,.45);
+  box-shadow: 0 0 0 3px rgba(200,169,110,.07);
+}
+.ff select option { background: var(--bg) }
+.ff textarea { resize: vertical; min-height: 84px }
+.fsub { width: 100%; justify-content: center; font-size: 15px; padding: 16px; margin-top: 8px }
+.fnote { font-size: 11.5px; color: var(--gray3); text-align: center; margin-top: 12px }
+
+/* ════════════════════════════════════
+   FAQ
+════════════════════════════════════ */
+.faq { padding: 110px 0 }
+.faq-header { max-width: 460px; margin-bottom: 44px }
+.faq-header h2 { font-size: clamp(26px,3.4vw,44px); font-weight: 800; color: #fff; margin-bottom: 10px }
+.faq-header p { font-size: 15px; color: var(--gray2); font-weight: 300 }
+.faq-list { max-width: 700px }
+.fi { border-bottom: 1px solid var(--border) }
+.fq {
+  font-size: 15px; font-weight: 600; color: var(--gray2);
+  display: flex; justify-content: space-between; align-items: center;
+  cursor: pointer; gap: 20px; background: none; border: none;
+  width: 100%; text-align: left; font-family: var(--ff-b);
+  transition: color .15s; padding: 20px 0;
+}
+.fq:hover { color: #fff }
+.fq-icon {
+  width: 20px; height: 20px; border-radius: 50%;
+  border: 1px solid var(--border2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; flex-shrink: 0; color: var(--gray3);
+  transition: transform .3s, border-color .3s, color .3s, background .3s;
+}
+.fi.open .fq { color: #fff }
+.fi.open .fq-icon { transform: rotate(45deg); border-color: rgba(200,169,110,.4); color: var(--gold); background: var(--gold-dim) }
+.fa {
+  font-size: 14px; color: var(--gray2); line-height: 1.78; font-weight: 300;
+  max-height: 0; overflow: hidden; transition: max-height .4s ease, padding-bottom .4s;
+}
+.fi.open .fa { max-height: 300px; padding-bottom: 20px }
+.fa strong { color: #fff; font-weight: 500 }
+
+/* ── TG CTA ── */
+.tg-cta { padding: 60px 0; background: var(--bg3); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border) }
+.tg-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap }
+.tg-left h3 { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 6px }
+.tg-left p { font-size: 15px; color: var(--gray3); font-weight: 300 }
+.tg-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 15px 28px; border-radius: var(--r);
+  background: linear-gradient(135deg, #c8a96e, #a07840);
+  color: #060606; font-weight: 700; font-size: 14px;
+  text-decoration: none; transition: transform .25s, box-shadow .25s;
+  white-space: nowrap; flex-shrink: 0; position: relative; overflow: hidden;
+}
+.tg-btn::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,.15), transparent);
+  opacity: 0; transition: opacity .25s;
+}
+.tg-btn:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(200,169,110,.35) }
+.tg-btn:hover::after { opacity: 1 }
+
+/* ── FOOTER ── */
+footer { padding: 44px 0; border-top: 1px solid var(--border) }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap }
+.footer-copy { font-size: 12px; color: var(--gray3); margin-top: 7px; margin-left: 44px }
+.footer-links { display: flex; gap: 26px; flex-wrap: wrap }
+.footer-links a { font-size: 13px; color: var(--gray3); text-decoration: none; transition: color .15s }
+.footer-links a:hover { color: var(--gold) }
+.footer-contact { font-size: 13px; color: var(--gray3) }
+.footer-contact a { color: var(--gold); text-decoration: none; font-weight: 600 }
+
+/* ── POPUP ── */
+.popup-overlay {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,.65); backdrop-filter: blur(6px);
+  display: flex; align-items: flex-end; justify-content: flex-end;
+  padding: 28px; pointer-events: none; opacity: 0;
+  transition: opacity .4s ease;
+}
+.popup-overlay.show { opacity: 1; pointer-events: all }
+.popup-box {
+  background: #131313; border: 1px solid rgba(200,169,110,.25);
+  border-radius: var(--r-xl); padding: 26px 28px; width: 330px;
+  position: relative; transform: translateY(24px) scale(.97);
+  transition: transform .4s cubic-bezier(.16,.85,.36,1);
+  box-shadow: 0 30px 100px rgba(0,0,0,.8), 0 0 40px rgba(200,169,110,.05);
+}
+.popup-box::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200,169,110,.5), transparent);
+}
+.popup-overlay.show .popup-box { transform: translateY(0) scale(1) }
+.popup-close {
+  position: absolute; top: 14px; right: 16px;
+  background: none; border: none; color: var(--gray3);
+  font-size: 16px; cursor: pointer; transition: color .15s; line-height: 1;
+}
+.popup-close:hover { color: #fff }
+.popup-icon {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: var(--gold-dim); border: 1px solid rgba(200,169,110,.25);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 17px; margin-bottom: 14px;
+}
+.popup-title { font-family: var(--ff-d); font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px }
+.popup-sub { font-size: 12.5px; color: var(--gray2); margin-bottom: 14px; line-height: 1.58 }
+.popup-timer { display: flex; align-items: center; gap: 8px; font-size: 11.5px; color: var(--gray3); margin-bottom: 16px }
+.popup-timer-val { font-family: var(--ff-d); font-size: 14px; font-weight: 700; color: var(--gold) }
+.popup-input {
+  width: 100%; background: var(--bg3); border: 1px solid var(--border2);
+  border-radius: 8px; padding: 11px 14px; color: #fff;
+  font-family: var(--ff-b); font-size: 13.5px; outline: none;
+  margin-bottom: 10px; transition: border-color .25s, box-shadow .25s;
+}
+.popup-input:focus { border-color: rgba(200,169,110,.4); box-shadow: 0 0 0 3px rgba(200,169,110,.06) }
+.popup-input::placeholder { color: var(--gray3) }
+.popup-btn {
+  width: 100%; padding: 13px; border-radius: 8px;
+  background: linear-gradient(135deg, #c8a96e, #a07840);
+  color: #060606; font-family: var(--ff-b); font-size: 13.5px;
+  font-weight: 700; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  transition: transform .2s, box-shadow .2s;
+}
+.popup-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(200,169,110,.3) }
+.popup-note { font-size: 11px; color: var(--gray3); text-align: center; margin-top: 9px }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .65s ease, transform .65s ease }
+.reveal.visible { opacity: 1; transform: translateY(0) }
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px) {
+  .hero { grid-template-columns: 1fr }
+  .hero-right { display: none }
+}
+@media(max-width:900px) {
+  .nav-links { display: none }
+  .pain-grid, .who-inner, .obj-grid, .how-steps { grid-template-columns: 1fr }
+  .sol-body { grid-template-columns: 1fr }
+  .cases-grid { grid-template-columns: 1fr }
+  .ccase--big { grid-column: auto }
+  .cases-note { text-align: left }
+  .frow { grid-template-columns: 1fr }
+  .tg-inner { flex-direction: column; text-align: center }
+}
+@media(max-width:580px) {
+  .container { padding: 0 18px }
+  .hero-stats { flex-direction: column; width: 100% }
+  .hstat { border-right: none; border-bottom: 1px solid var(--border) }
+  .hstat:last-child { border-bottom: none }
+  .form-box { padding: 20px }
+  .sol-head { flex-wrap: wrap }
+}
+</style>
+</head>
+<body>
+
+<!-- Particles -->
+<div id="particles"></div>
+
+<!-- Cursors -->
+<div class="cur-dot" id="curDot"></div>
+<div class="cur-ring" id="curRing"></div>
+
+<!-- Progress bar -->
+<div class="progress-bar" id="progress"></div>
+
+<!-- ═══ POPUP ═══ -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-box">
+    <button class="popup-close" onclick="closePopup()">✕</button>
+    <div class="popup-icon">🎯</div>
+    <div class="popup-title">Найдём 3 точки потери денег</div>
+    <div class="popup-sub">Конкретный разбор вашей воронки — без воды и рассылок</div>
+    <div class="popup-timer">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5.5" stroke="currentColor" stroke-width="1"/><path d="M6 3V6.5L8 8" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
+      Предложение действует: <span class="popup-timer-val" id="timerVal">14:59</span>
+    </div>
+    <input type="text" class="popup-input" placeholder="Email, Telegram или телефон" id="popupInput">
+    <button class="popup-btn" onclick="popupSubmit()">
+      Получить бесплатный аудит →
+    </button>
+    <p class="popup-note">Только факты. Без воды и рассылок.</p>
+  </div>
+</div>
+
+<!-- Notice -->
+<div class="notice">
+  <span class="ndot"></span>
+  <strong>Апрель занят на 80%</strong> — осталось 2 места. Заявка сейчас фиксирует очередь.
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-mark">AT</div>
+        <span class="logo-text">Алексей Тарануха</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#solution">Услуги</a></li>
+        <li><a href="#how">Процесс</a></li>
+        <li><a href="#cases">Кейсы</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-gold nav-cta">Получить аудит →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="home">
+  <div class="hero-grid"></div>
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+
+  <div class="container" style="display:contents">
+    <div class="container" style="padding-top:0;padding-bottom:0">
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span></span>
+          Продающие сайты · AI-автоматизация · Эксперты
+        </div>
+        <h1>
+          <span id="tw-line1">Реклама идёт —</span><br>
+          а заявок <span class="gold-text">нет?</span><br>
+          Покажу где<br>теряются деньги.<span class="tw-cursor" id="twCursor"></span>
+        </h1>
+        <p class="hero-sub">
+          Делаю продающие сайты и AI-автоматизацию для экспертов, наставников и онлайн-школ с оборотом <strong>от 300 000 ₽ в месяц.</strong> Средний рост заявок — <strong>×3 при том же трафике.</strong>
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-gold">Получить бесплатный аудит →</a>
+          <a href="#cases" class="btn btn-outline">Смотреть кейсы</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hstat">
+            <div class="hstat-num" data-count="3" data-prefix="×">×0</div>
+            <div class="hstat-label">средний рост заявок</div>
+          </div>
+          <div class="hstat">
+            <div class="hstat-num" data-count="14" data-suffix="дн">0<span>дн</span></div>
+            <div class="hstat-label">от брифа до запуска</div>
+          </div>
+          <div class="hstat">
+            <div class="hstat-num" data-count="0" data-suffix="%">0<span>%</span></div>
+            <div class="hstat-label">потерянных заявок</div>
+          </div>
+          <div class="hstat">
+            <div class="hstat-num" data-count="3" data-suffix="мин">0<span>мин</span></div>
+            <div class="hstat-label">скорость ответа AI</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT CARD -->
+    <div style="padding-right:36px; position:relative; z-index:1">
+      <div class="hero-card hero-right">
+        <div class="hero-card-title">AI-воронка · Путь заявки</div>
+        <div class="funnel-steps">
+          <div class="funnel-step">
+            <div class="funnel-connector"></div>
+            <div class="funnel-icon">📋</div>
+            <div class="funnel-info">
+              <div class="funnel-name">Заявка с сайта</div>
+              <div class="funnel-desc">Форма, квиз или кнопка</div>
+            </div>
+            <div class="funnel-badge">0 сек</div>
+          </div>
+          <div class="funnel-step">
+            <div class="funnel-connector"></div>
+            <div class="funnel-icon">🤖</div>
+            <div class="funnel-info">
+              <div class="funnel-name">Telegram-бот квалифицирует</div>
+              <div class="funnel-desc">AI задаёт вопросы, собирает данные</div>
+            </div>
+            <div class="funnel-badge">3 мин</div>
+          </div>
+          <div class="funnel-step">
+            <div class="funnel-connector"></div>
+            <div class="funnel-icon">⚙️</div>
+            <div class="funnel-info">
+              <div class="funnel-name">n8n-автоматизация</div>
+              <div class="funnel-desc">Данные в CRM + уведомление</div>
+            </div>
+            <div class="funnel-badge">авто</div>
+          </div>
+          <div class="funnel-step">
+            <div class="funnel-connector"></div>
+            <div class="funnel-icon">💼</div>
+            <div class="funnel-info">
+              <div class="funnel-name">AmoCRM / Bitrix24</div>
+              <div class="funnel-desc">Карточка сделки с баллом</div>
+            </div>
+            <div class="funnel-badge">готов</div>
+          </div>
+          <div class="funnel-step">
+            <div class="funnel-icon">✅</div>
+            <div class="funnel-info">
+              <div class="funnel-name">Вы закрываете сделку</div>
+              <div class="funnel-desc">Только тёплые квалифицированные лиды</div>
+            </div>
+            <div class="funnel-badge">ROI ×4</div>
+          </div>
+        </div>
+        <div class="hero-card-bottom">
+          <div class="hcb-item">
+            <div class="hcb-num">0%</div>
+            <div class="hcb-label">потерянных заявок</div>
+          </div>
+          <div class="hcb-item">
+            <div class="hcb-num">3 мин</div>
+            <div class="hcb-label">скорость ответа</div>
+          </div>
+          <div class="hcb-item">
+            <div class="hcb-num">×21</div>
+            <div class="hcb-label">конверсия 5-мин ответа</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="mtrack">
+    <div class="mitem">Конверсионные лендинги</div>
+    <div class="mitem">AI-автоматизация заявок</div>
+    <div class="mitem">CRM-интеграции</div>
+    <div class="mitem">Воронки продаж</div>
+    <div class="mitem">Telegram-боты</div>
+    <div class="mitem">n8n-автоматизация</div>
+    <div class="mitem">Упаковка экспертов</div>
+    <div class="mitem">Онлайн-школы</div>
+    <div class="mitem">Наставники</div>
+    <div class="mitem">B2B-услуги</div>
+    <div class="mitem">Конверсионные лендинги</div>
+    <div class="mitem">AI-автоматизация заявок</div>
+    <div class="mitem">CRM-интеграции</div>
+    <div class="mitem">Воронки продаж</div>
+    <div class="mitem">Telegram-боты</div>
+    <div class="mitem">n8n-автоматизация</div>
+    <div class="mitem">Упаковка экспертов</div>
+    <div class="mitem">Онлайн-школы</div>
+    <div class="mitem">Наставники</div>
+    <div class="mitem">B2B-услуги</div>
+  </div>
+</div>
+
+<!-- ═══ PAIN ═══ -->
+<section class="pain" id="pain">
+  <div class="container">
+    <div class="pain-header reveal">
+      <div class="label">Почему это происходит</div>
+      <h2>Знакомые <em>симптомы?</em></h2>
+      <p>Если хоть один пункт — про вас, вы теряете деньги прямо сейчас.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pcard reveal">
+        <div class="pcard-icon">📉</div>
+        <h4>Трафик есть — заявок нет</h4>
+        <p>Люди заходят и уходят. Без правильной структуры и закрытия возражений посадочная страница не продаёт — она просто существует.</p>
+        <div class="pcard-stat">−78%<span>конверсии теряет лендинг без продающей структуры</span></div>
+      </div>
+      <div class="pcard reveal">
+        <div class="pcard-icon">💸</div>
+        <h4>Реклама не окупается</h4>
+        <p>Каждый рубль в рекламу без конвертирующей посадочной работает в 3–5 раз хуже. Деньги уходят — предсказуемого результата нет.</p>
+        <div class="pcard-stat">×4<span>разница в ROI при правильном лендинге</span></div>
+      </div>
+      <div class="pcard reveal">
+        <div class="pcard-icon">⏳</div>
+        <h4>Заявки теряются при обработке</h4>
+        <p>40% лидов не получают ответа в первый час. За это время клиент уже написал двум конкурентам. Ручная обработка не масштабируется.</p>
+        <div class="pcard-stat">40%<span>заявок теряется без системы автоматизации</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHO ═══ -->
+<section class="who" id="who">
+  <div class="container">
+    <div class="who-inner">
+      <div class="who-left reveal">
+        <div class="label">Для кого</div>
+        <h2>Работаю с теми,<br>у кого уже есть<br><em>продукт и оборот</em></h2>
+        <p>Не занимаюсь стартапами без оборота. Мои клиенты — люди, которые уже зарабатывают, но упёрлись в потолок из-за отсутствия системной точки конвертации.</p>
+        <p class="trigger-note">Если недавно слили бюджет на рекламу без результата или видели как конкурент обновил упаковку — это тот момент, когда нужно действовать.</p>
+      </div>
+      <div class="who-cards reveal">
+        <div class="wcard">
+          <div class="wcard-icon">🎯</div>
+          <div>
+            <h4>Эксперты и наставники</h4>
+            <p>Аудитория есть, продажи идут через сарафан. Нужна система, которая работает без участия в каждой сделке.</p>
+            <div class="wcard-budget">Типичный бюджет: 40 000–120 000 ₽</div>
+          </div>
+        </div>
+        <div class="wcard">
+          <div class="wcard-icon">🏫</div>
+          <div>
+            <h4>Продюсеры и онлайн-школы</h4>
+            <p>Есть запуски и выручка, но конверсия лендинга ниже 2% или заявки обрабатываются вручную менеджерами.</p>
+            <div class="wcard-budget">Типичный бюджет: 90 000–250 000 ₽</div>
+          </div>
+        </div>
+        <div class="wcard">
+          <div class="wcard-icon">💼</div>
+          <div>
+            <h4>B2B-специалисты с высоким чеком</h4>
+            <p>Продаёте через нетворкинг и рекомендации. Хотите выстроить предсказуемый входящий поток.</p>
+            <div class="wcard-budget">Типичный бюджет: 50 000–150 000 ₽</div>
+          </div>
+        </div>
+        <div class="wcard">
+          <div class="wcard-icon">🚫</div>
+          <div>
+            <h4>Не работаю с...</h4>
+            <p>Проектами без готового продукта, MLM и нишами без реальной аудитории.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SOLUTION ═══ -->
+<section class="solution" id="solution">
+  <div class="container">
+    <div class="solution-header reveal">
+      <div class="label">Что я делаю</div>
+      <h2>Не «просто сайт» —<br>система, которая продаёт</h2>
+      <p>Два инструмента, которые решают разные части одной проблемы.</p>
+    </div>
+    <div class="sol-items">
+      <div class="sol-item reveal">
+        <div class="sol-head">
+          <div class="sol-num">01</div>
+          <div class="sol-title-wrap">
+            <h3>Продающий лендинг</h3>
+            <div class="sol-sub2">Структура, которая конвертирует посетителей в заявки — не визитка, а инструмент</div>
+          </div>
+          <div class="sol-price">от 40 000 ₽</div>
+        </div>
+        <div class="sol-body">
+          <div>
+            <p>Лендинг строится вокруг логики принятия решения вашего клиента. Структура: оффер → боль → усиление → решение → кейсы → закрытие возражений → заявка.</p>
+            <div class="sol-roi">
+              <div class="sol-roi-label">Как считается окупаемость</div>
+              <p>При чеке 50 000 ₽ и конверсии 30% — одна дополнительная заявка даёт +15 000 ₽. Лендинг за 60 000 ₽ окупается при 4 дополнительных заявках.</p>
+            </div>
+          </div>
+          <ul class="sol-list">
+            <li>Анализ аудитории и конкурентного окружения</li>
+            <li>Продающая структура и копирайтинг под нишу</li>
+            <li>Адаптивная вёрстка под все устройства</li>
+            <li>Квалификационная форма заявки</li>
+            <li>Подключение Яндекс.Метрики и пикселей</li>
+            <li>Open Graph для превью в Telegram и ВКонтакте</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sol-item reveal">
+        <div class="sol-head">
+          <div class="sol-num">02</div>
+          <div class="sol-title-wrap">
+            <h3>AI-автоматизация заявок</h3>
+            <div class="sol-sub2">Система обрабатывает лиды за 3 минуты — без вашего участия</div>
+          </div>
+          <div class="sol-price">от 30 000 ₽</div>
+        </div>
+        <div class="sol-body">
+          <div>
+            <p>Когда заявка поступает — она мгновенно попадает в CRM, AI-бот квалифицирует лида, отправляет персональный ответ и ставит задачу. Вы занимаетесь только закрытием.</p>
+            <div class="sol-roi">
+              <div class="sol-roi-label">Реальный результат</div>
+              <p>До автоматизации: 40% заявок без ответа в первый час. После: 3 минуты, потерянных лидов — 0%. Ответ в первые 5 минут увеличивает вероятность продажи в 21 раз.</p>
+            </div>
+          </div>
+          <ul class="sol-list">
+            <li>Telegram-бот для квалификации лидов</li>
+            <li>Интеграция с AmoCRM или Bitrix24</li>
+            <li>Автоматические уведомления и follow-up цепочки</li>
+            <li>n8n / Make для связки всех систем</li>
+            <li>Дашборд аналитики в реальном времени</li>
+            <li>Автоворонка с прогревом под нишу</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sol-item reveal">
+        <div class="sol-head">
+          <div class="sol-num">03</div>
+          <div class="sol-title-wrap">
+            <h3>Система под ключ</h3>
+            <div class="sol-sub2">Лендинг + автоматизация + аналитика — единый механизм за 14 дней</div>
+          </div>
+          <div class="sol-price">от 90 000 ₽</div>
+        </div>
+        <div class="sol-body">
+          <div>
+            <p>Полный пакет: конверсионный лендинг, AI-обработка заявок, CRM и аналитика. KPI фиксируются в договоре. Через 14 дней работает система без вашего участия.</p>
+          </div>
+          <ul class="sol-list">
+            <li>Всё из пунктов 01 и 02</li>
+            <li>Стратегическая сессия перед стартом</li>
+            <li>Фиксированные KPI в договоре</li>
+            <li>30 дней сопровождения после запуска</li>
+            <li>Оптимизация по первым реальным данным</li>
+            <li>Обучение работе с системой</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STACK ═══ -->
+<section class="stack">
+  <div class="container">
+    <div class="stack-header reveal">
+      <h2>Технологический стек</h2>
+      <p>Инструменты которые использую для создания систем</p>
+    </div>
+    <div class="stack-grid reveal">
+      <div class="stack-item"><div class="stack-dot"></div>n8n</div>
+      <div class="stack-item"><div class="stack-dot"></div>Make (Integromat)</div>
+      <div class="stack-item"><div class="stack-dot"></div>AmoCRM</div>
+      <div class="stack-item"><div class="stack-dot"></div>Bitrix24</div>
+      <div class="stack-item"><div class="stack-dot"></div>Telegram Bot API</div>
+      <div class="stack-item"><div class="stack-dot"></div>Tilda</div>
+      <div class="stack-item"><div class="stack-dot"></div>GetCourse</div>
+      <div class="stack-item"><div class="stack-dot"></div>Senler</div>
+      <div class="stack-item"><div class="stack-dot"></div>Яндекс.Метрика</div>
+      <div class="stack-item"><div class="stack-dot"></div>Google Analytics</div>
+      <div class="stack-item"><div class="stack-dot"></div>OpenAI API</div>
+      <div class="stack-item"><div class="stack-dot"></div>Яндекс.Вебмастер</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW ═══ -->
+<section class="how" id="how">
+  <div class="container">
+    <div class="how-header reveal">
+      <div class="label">Процесс работы</div>
+      <h2>От брифа до заявок —<br>14 рабочих дней</h2>
+      <p>Чётко и предсказуемо. Вы знаете статус на каждом шаге.</p>
+    </div>
+    <div class="how-steps">
+      <div class="hstep reveal">
+        <div class="hstep-num">01</div>
+        <h4>Диагностика</h4>
+        <p>Разбираем воронку, текущий трафик и точки потери. Считаю сколько вы теряете прямо сейчас в рублях.</p>
+        <div class="hstep-time">День 1–2</div>
+      </div>
+      <div class="hstep reveal">
+        <div class="hstep-num">02</div>
+        <h4>Стратегия</h4>
+        <p>Прописываем оффер, структуру лендинга, логику воронки и сценарии обработки заявок. Утверждаем вместе.</p>
+        <div class="hstep-time">День 3–5</div>
+      </div>
+      <div class="hstep reveal">
+        <div class="hstep-num">03</div>
+        <h4>Разработка</h4>
+        <p>Верстаю лендинг, настраиваю боты, подключаю CRM и аналитику. Промежуточная демонстрация на 7-й день.</p>
+        <div class="hstep-time">День 6–12</div>
+      </div>
+      <div class="hstep reveal">
+        <div class="hstep-num">04</div>
+        <h4>Запуск и оптимизация</h4>
+        <p>Запускаем систему, анализируем первые данные и докручиваем. Сопровождение 30 дней после запуска.</p>
+        <div class="hstep-time">День 13–14+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CASES ═══ -->
+<section class="cases" id="cases">
+  <div class="container">
+    <div class="cases-top reveal">
+      <div>
+        <div class="label">Кейсы</div>
+        <h2>Результаты,<br>а не просто работы</h2>
+      </div>
+      <p class="cases-note">Только измеримые показатели: рост заявок, стоимость лида, процент потерь.</p>
+    </div>
+    <div class="cases-grid">
+      <div class="ccase ccase--big reveal">
+        <span class="ccase-tag">Лендинг + AI-автоматизация · Система под ключ</span>
+        <div class="ccase-client">Онлайн-школа · Ниша: продюсирование</div>
+        <h3>Конверсия выросла с 1.2% до 4.7% —<br>при том же трафике и том же бюджете</h3>
+        <p>Сайт-визитка без оффера. Трафик — 8 000 посетителей в месяц, заявок — 96. После переупаковки и внедрения AI-квалификации заявок стало 376 при том же трафике.</p>
+        <div class="metrics">
+          <div><div class="metric-num">×3.9</div><div class="metric-label">рост числа заявок</div></div>
+          <div><div class="metric-num">−64%</div><div class="metric-label">стоимость одного лида</div></div>
+          <div><div class="metric-num">0%</div><div class="metric-label">потерянных заявок</div></div>
+          <div><div class="metric-num">14 дн</div><div class="metric-label">от брифа до запуска</div></div>
+        </div>
+      </div>
+      <div class="ccase reveal">
+        <span class="ccase-tag">Лендинг · Высокий чек</span>
+        <div class="ccase-client">Наставник · B2B-коучинг · Чек 120 000 ₽</div>
+        <h3>Первый лендинг — 8 новых клиентов в первый месяц</h3>
+        <p>До этого продавал через личные переговоры. Новый лендинг позволил запустить холодный трафик и получить предсказуемый входящий поток.</p>
+        <div class="metrics">
+          <div><div class="metric-num">2.8%</div><div class="metric-label">конверсия в заявку</div></div>
+          <div><div class="metric-num">+8</div><div class="metric-label">новых клиентов в мес.</div></div>
+        </div>
+      </div>
+      <div class="ccase reveal">
+        <span class="ccase-tag">AI-автоматизация · CRM</span>
+        <div class="ccase-client">Эксперт · Онлайн-школа · 150+ заявок в месяц</div>
+        <h3>Ноль потерянных заявок вместо 40% до автоматизации</h3>
+        <p>Менеджер не успевал отвечать: 40% заявок уходили к конкурентам. После внедрения AI-бота каждый лид получает ответ за 3 минуты.</p>
+        <div class="metrics">
+          <div><div class="metric-num">3 мин</div><div class="metric-label">скорость ответа</div></div>
+          <div><div class="metric-num">+67%</div><div class="metric-label">закрытых сделок</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OBJECTIONS ═══ -->
+<section class="obj" id="objections">
+  <div class="container">
+    <div class="obj-header reveal">
+      <div class="label">Часто слышу</div>
+      <h2>Возражения, с которых<br>обычно начинается разговор</h2>
+      <p>Отвечаю честно — работаю только с теми, кому это реально нужно.</p>
+    </div>
+    <div class="obj-grid">
+      <div class="ocard reveal">
+        <div class="ocard-q">Я сам могу сделать на Tilda</div>
+        <p>Можете — и это будет визитка. Разница не в инструменте, а в результате. <strong>Средняя разница: ×3 заявки при том же трафике.</strong></p>
+      </div>
+      <div class="ocard reveal">
+        <div class="ocard-q">Дорого</div>
+        <p>Давайте посчитаем: ваш средний чек × конверсия = доход с одной заявки. <strong>В большинстве случаев — 4–6 заявок окупают лендинг.</strong></p>
+      </div>
+      <div class="ocard reveal">
+        <div class="ocard-q">Уже работал с подрядчиком — не помогло</div>
+        <p>Именно поэтому начинаю с диагностики и <strong>фиксирую конкретные KPI в договоре.</strong> Не достигнуты — дорабатываю за свой счёт.</p>
+      </div>
+      <div class="ocard reveal">
+        <div class="ocard-q">Нет времени на созвон</div>
+        <p>Для этого и существует бесплатный аудит: <strong>30 минут, итог — документ с тремя точками роста</strong> вашей воронки. Без обязательств.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA FORM ═══ -->
+<section class="cta-sec" id="contact">
+  <div class="container">
+    <div class="cta-wrap">
+      <div class="label" style="justify-content:center">Первый шаг</div>
+      <h2>Бесплатный аудит вашей<br><em>системы привлечения заявок</em></h2>
+      <p>Разберу воронку, посадочную и процесс обработки лидов. Покажу три конкретные точки потери денег. 30 минут, ни к чему не обязывает.</p>
+      <div class="form-box">
+        <div class="frow">
+          <div class="ff">
+            <label>Имя</label>
+            <input type="text" placeholder="Как к вам обращаться?">
+          </div>
+          <div class="ff">
+            <label>Telegram или WhatsApp</label>
+            <input type="text" placeholder="@username или +7...">
+          </div>
+        </div>
+        <div class="frow">
+          <div class="ff">
+            <label>Ниша / продукт</label>
+            <input type="text" placeholder="Наставничество, онлайн-школа, B2B...">
+          </div>
+          <div class="ff">
+            <label>Оборот в месяц</label>
+            <select>
+              <option value="" disabled selected>Выберите диапазон</option>
+              <option>До 300 000 ₽</option>
+              <option>300 000 – 700 000 ₽</option>
+              <option>700 000 – 2 000 000 ₽</option>
+              <option>Более 2 000 000 ₽</option>
+            </select>
+          </div>
+        </div>
+        <div class="ff" style="margin-bottom:12px">
+          <label>Главная задача</label>
+          <textarea placeholder="Что сейчас мешает масштабироваться?"></textarea>
+        </div>
+        <button class="btn btn-gold fsub" id="submitBtn">Отправить заявку на аудит →</button>
+        <p class="fnote">Отвечу в Telegram в течение 2 часов. Аудит — бесплатно, без обязательств.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq-header reveal">
+      <div class="label">FAQ</div>
+      <h2>Частые вопросы</h2>
+      <p>Не нашли ответ — напишите в Telegram, отвечу лично.</p>
+    </div>
+    <div class="faq-list">
+      <div class="fi open">
+        <button class="fq" onclick="toggleFaq(this)">Сколько стоит полная система под ключ?<span class="fq-icon">+</span></button>
+        <div class="fa">Лендинг — от 40 000 ₽, автоматизация — от 30 000 ₽, система под ключ — от 90 000 ₽. Точная стоимость обсуждается после диагностики. Минимальный бюджет — 40 000 ₽.</div>
+      </div>
+      <div class="fi">
+        <button class="fq" onclick="toggleFaq(this)">Как вы гарантируете результат?<span class="fq-icon">+</span></button>
+        <div class="fa">Фиксирую в договоре: целевую конверсию, скорость обработки заявок и срок запуска. Если показатели не достигнуты — <strong>дорабатываю за свой счёт.</strong></div>
+      </div>
+      <div class="fi">
+        <button class="fq" onclick="toggleFaq(this)">На каких платформах делаете сайты?<span class="fq-icon">+</span></button>
+        <div class="fa">Tilda, Readymag, кастомная HTML-вёрстка и GetCourse. Под каждый проект выбираю инструмент под задачу. Инструмент не важен — важен результат.</div>
+      </div>
+      <div class="fi">
+        <button class="fq" onclick="toggleFaq(this)">Что нужно подготовить для старта?<span class="fq-icon">+</span></button>
+        <div class="fa">Готовый продукт и 1–2 часа на стратегическую сессию. Тексты, структуру лендинга и всю техническую реализацию беру на себя.</div>
+      </div>
+      <div class="fi">
+        <button class="fq" onclick="toggleFaq(this)">Вы работаете один или как агентство?<span class="fq-icon">+</span></button>
+        <div class="fa">Работаю напрямую. Вы общаетесь со мной — и я лично несу ответственность за результат. Для узкоспециализированных задач привлекаю проверенных специалистов.</div>
+      </div>
+      <div class="fi">
+        <button class="fq" onclick="toggleFaq(this)">Будет ли поддержка после запуска?<span class="fq-icon">+</span></button>
+        <div class="fa">Да. 30 дней сопровождения: анализирую первые данные, вношу правки, отвечаю на вопросы. В пакете «Под ключ» это включено.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TG CTA -->
+<div class="tg-cta">
+  <div class="container">
+    <div class="tg-inner reveal">
+      <div class="tg-left">
+        <h3>Кейсы и инсайты в Telegram</h3>
+        <p>Разборы сайтов, цифры конверсий, антикейсы — реальная практика без воды</p>
+      </div>
+      <a href="https://t.me/taranukha?utm_source=site&utm_medium=cta_bar&utm_campaign=tg_subscribe" target="_blank" class="tg-btn">
+        Подписаться на канал →
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <a href="#" class="logo">
+          <div class="logo-mark">AT</div>
+          <span class="logo-text">Алексей Тарануха</span>
+        </a>
+        <p class="footer-copy">Продающие сайты · AI-автоматизация для экспертов</p>
+      </div>
+      <div class="footer-links">
+        <a href="#solution">Услуги</a>
+        <a href="#cases">Кейсы</a>
+        <a href="#how">Процесс</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Аудит</a>
+      </div>
+      <div class="footer-contact">Telegram: <a href="https://t.me/taranukha" target="_blank">@taranukha</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ═══════════ PARTICLES ═══════════ */
+(function initParticles() {
+  const container = document.getElementById('particles');
+  const count = 18;
+  for (let i = 0; i < count; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 2.5 + .5;
+    const dur = Math.random() * 20 + 18;
+    const delay = Math.random() * 25;
+    const left = Math.random() * 100;
+    p.style.cssText = `
+      width:${size}px; height:${size}px;
+      left:${left}%;
+      animation-duration:${dur}s;
+      animation-delay:${delay}s;
+      opacity:.5;
+    `;
+    container.appendChild(p);
+  }
+})();
+
+/* ═══════════ DUAL CURSOR ═══════════ */
+const dot  = document.getElementById('curDot');
+const ring = document.getElementById('curRing');
+let mx=0, my=0, rx=0, ry=0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY });
+(function animCursor() {
+  dot.style.left  = mx + 'px';
+  dot.style.top   = my + 'px';
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) * 0.12;
+  ring.style.left = rx + 'px';
+  ring.style.top  = ry + 'px';
+  requestAnimationFrame(animCursor);
+})();
+const hoverEls = 'a,button,.wcard,.pcard,.ocard,.ccase,.stack-item,.funnel-step,.hstep,.hstat';
+document.querySelectorAll(hoverEls).forEach(el => {
+  el.addEventListener('mouseenter', () => ring.classList.add('big'));
+  el.addEventListener('mouseleave', () => ring.classList.remove('big'));
+});
+
+/* ═══════════ NAV + PROGRESS ═══════════ */
+const nav  = document.getElementById('nav');
+const prog = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('sc', window.scrollY > 30);
+  const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+  prog.style.width = pct + '%';
+}, { passive: true });
+
+/* ═══════════ REVEAL ═══════════ */
+const io = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 55);
+    }
+  });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ═══════════ COUNT-UP ═══════════ */
+function animCount(el) {
+  const target = parseFloat(el.dataset.count);
+  const prefix = el.dataset.prefix || '';
+  const suffix = el.dataset.suffix || '';
+  const inner = el.querySelector('span');
+  let current = 0;
+  const duration = 1200;
+  const start = performance.now();
+  function step(now) {
+    const elapsed = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - elapsed, 3);
+    current = target * eased;
+    const display = Number.isInteger(target) ? Math.round(current) : current.toFixed(1);
+    el.innerHTML = prefix + display + (inner ? `<span>${suffix}</span>` : suffix);
+    if (elapsed < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+const statsIo = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      document.querySelectorAll('.hstat-num[data-count]').forEach(animCount);
+      statsIo.disconnect();
+    }
+  });
+}, { threshold: 0.5 });
+const statsEl = document.querySelector('.hero-stats');
+if (statsEl) statsIo.observe(statsEl);
+
+/* ═══════════ FAQ ═══════════ */
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.fi').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+/* ═══════════ FORM ═══════════ */
+document.getElementById('submitBtn').addEventListener('click', function() {
+  this.textContent = '✓ Заявка отправлена — напишу в Telegram в течение 2 часов';
+  this.style.background = 'rgba(200,169,110,.12)';
+  this.style.color = 'var(--gold)';
+  this.style.border = '1px solid rgba(200,169,110,.3)';
+  this.disabled = true;
+});
+
+/* ═══════════ POPUP ═══════════ */
+let popupShown = false;
+let timerSec = 14 * 60 + 59;
+let timerInterval;
+
+function showPopup() {
+  if (popupShown) return;
+  popupShown = true;
+  document.getElementById('popup').classList.add('show');
+  timerInterval = setInterval(() => {
+    if (timerSec <= 0) { clearInterval(timerInterval); return }
+    timerSec--;
+    const m = String(Math.floor(timerSec/60)).padStart(2,'0');
+    const s = String(timerSec%60).padStart(2,'0');
+    document.getElementById('timerVal').textContent = m+':'+s;
+  }, 1000);
+}
+function closePopup() {
+  document.getElementById('popup').classList.remove('show');
+}
+function popupSubmit() {
+  const btn = document.querySelector('.popup-btn');
+  btn.textContent = '✓ Отправлено! Напишу в Telegram';
+  btn.style.background = 'rgba(200,169,110,.12)';
+  btn.style.color = 'var(--gold)';
+  btn.style.border = '1px solid rgba(200,169,110,.3)';
+  clearInterval(timerInterval);
+  setTimeout(closePopup, 2500);
+}
+setTimeout(showPopup, 28000);
+document.addEventListener('mouseleave', e => { if (e.clientY < 5) showPopup() });
+document.getElementById('popup').addEventListener('click', function(e) { if (e.target===this) closePopup() });
+
+/* ═══════════ SHIMMER HOVER CARDS ═══════════ */
+document.querySelectorAll('.ccase, .pcard, .ocard').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width * 100).toFixed(1);
+    const y = ((e.clientY - rect.top) / rect.height * 100).toFixed(1);
+    card.style.setProperty('--mx', x + '%');
+    card.style.setProperty('--my', y + '%');
+  });
+});
+</script>
+
+</body>
+</html>
